@@ -525,17 +525,18 @@ gsap.utils.toArray('.project-card').forEach((card, index) => {
     });
 });
 
-// Smooth Tool Pills Animation
+// Smooth Tool Pills Animation - Faster and smoother
 gsap.utils.toArray('.tool-pill').forEach((pill, index) => {
     gsap.from(pill, {
         opacity: 0,
-        scale: 0,
-        duration: 0.5,
-        delay: index * 0.05,
-        ease: "elastic.out(1, 0.5)",
+        y: 20,
+        scale: 0.9,
+        duration: 0.4,
+        delay: index * 0.03,
+        ease: "power2.out",
         scrollTrigger: {
-            trigger: pill,
-            start: "top 90%",
+            trigger: '.tools-grid',
+            start: "top 85%",
             toggleActions: "play none none reverse"
         }
     });
